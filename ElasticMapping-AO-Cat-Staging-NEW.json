@@ -1,0 +1,479 @@
+{
+    "catalog_test": {
+        "mappings": {
+            "properties": {
+
+                /*
+                  AO-Cat 5.18 - Mandatory - (has_derived_subject)
+                  This property associates a AO_Data_Resource with a subject automatically
+                  derived by mapping a native subject of the resource to a term in the Getty AAT vocabulary.
+                  The native subject may have the SKOS relations
+                  (skos:broadMatch, skos:closeMatch,skos:exactMatch,skos:narrowMatch, skos:relatedMatch)
+                  to the Getty AAT vocabulary.
+                  In Portal filter: Getty AAT Subjects
+                */
+                "derivedSubject": {
+                    "properties": {
+                        "prefLabel": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "source": {
+                            "type": "text",
+                        },
+                        "id": {
+                            "type": "text"
+                        },
+                        "lang": {
+                            "type": "text"
+                        }
+                    }
+                },
+
+                /* AO-Cat 5.22 */
+                "accessPolicy": {
+                    "type": "text"
+                },
+
+                /* AO-Cat 5.23 - Mandatory - (has_access_rights) */
+                "accessRights": {
+                    "type": "text"
+                },
+
+                /*
+                  NEW - Mandatory - AO-Cat 5.18 (has_ariadne_subject)
+                  This property associates a AO_Data_Resource with one the fundamental archaeological categories
+                  defined by ARIADNE. These are  the high level “resource types”, or semantic categories which are used in the ARIADNE portal to filter search results e.g. “Site and monuments databases or inventories”, “Event/intervention resources” etc
+                */
+                "ariadneSubject": {
+                    "properties": {
+                        "prefLabel": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {
+                                    "type": "keyword"
+                                }
+                            }
+                        }
+                    }
+                },
+
+                /* AO-Cat 5.9 - Mandatory - (has_contributor)*/
+                "contributor": {
+                    "properties": {
+                        "email": {
+                            "type": "text"
+                        },
+                        "homepage": {
+                            "type": "text"
+                        },
+                        "institution": {
+                            "type": "text"
+                        },
+                        "name": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "agentIdentifier": {
+                            "type": "text"
+                        }
+                    }
+                },
+
+                /* AO-Cat 5.10 - Mandatory - (has_creator) */
+                "creator": {
+                  "properties": {
+                      "email": {
+                          "type": "text"
+                      },
+                      "homepage": {
+                          "type": "text"
+                      },
+                      "institution": {
+                          "type": "text"
+                      },
+                      "name": {
+                          "type": "text",
+                          "fields": {
+                              "raw": {
+                                  "type": "keyword"
+                              }
+                          }
+                      },
+                      "agentIdentifier": {
+                          "type": "text"
+                      }
+                  }
+                },
+
+
+
+                /* AO-Cat 5.4 */
+                "description": {
+                  "properties": {
+                    "text": {
+                        "type": "text"
+                    },
+                    "language": {
+                        "type": "text"
+                    }
+                  }
+                },
+
+                /* AO-Cat 5.26 */
+                "extent": {
+                    "type": "text"
+                },
+
+                /* AO-Cat 5.1  - keep as Ariadne URI */
+                "identifier": {
+                    "type": "keyword"
+                },
+
+                /** NEXT MEETING 20th at 14:00 hrs **/
+
+                /* AO-Cat 5.7 (has_part) */
+                "isPartOf": {
+                    "type": "text"
+                },
+
+                /* AO-Cat 5.5 - Mandatory - (was_issued) */
+                "issued": {
+                    "type": "date",
+                    "format": "year || date_optional_time"
+                },
+
+                /* DELETE - Field missing in AO-Cat doc */
+                "keyword": {
+                    "type": "text",
+                    "fields": {
+                        "raw": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+
+                /* AO-Cat 5.21 */
+                "landingPage": {
+                    "type": "text"
+                },
+
+                /* AO-Cat 5.19 - Mandatory - (has_language)*/
+                "language": {
+                    "type": "text"
+                },
+
+                /* DELETE - AO-Cat 5.12 - See 'responsible' - (has_responsible) */
+                "legalResponsible": {
+                    "properties": {
+                        "email": {
+                            "type": "text"
+                        },
+                        "name": {
+                            "type": "text"
+                        },
+                        "phone": {
+                            "type": "text"
+                        },
+                        "type": {
+                            "type": "text"
+                        }
+                    }
+                },
+
+                /* AO-Cat 5.6 - Mandatory - (was_modified) */
+                "modified": {
+                    "type": "date",
+                    "format": "year || date_optional_time"
+                },
+
+                /*
+                AO-Cat 5.17 - Mandatory - (has_native_subject)
+                This property associates a AO_Data_Resource with an original subject in the providing institution
+                In Portal filter: Original Subject
+                */
+                "nativeSubject": {
+                    "properties": {
+                        "prefLabel": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "rdfAbout": {
+                            "type": "text",
+                            "fields": {
+                                "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                }
+                            }
+                        }
+                    }
+                },
+
+                /* AO-Cat 5.13 - Mandatory - (has_original_id) */
+                "originalId": {
+                    "type": "text"
+                },
+
+                /* AO-Cat 5.11 - Mandatory - (has_owner) */
+                "owner": {
+                    "properties": {
+                        "email": {
+                            "type": "text"
+                        },
+                        "name": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "phone": {
+                            "type": "text"
+                        },
+                        "type": {
+                            "type": "text"
+                        }
+                    }
+                },
+
+                /* DELETE - Field missing in AO-Cat doc */
+                "packageId": {
+                    "type": "text"
+                },
+
+                /* AO-Cat 5.52 */
+                "placeName": {
+                    "type": "text",
+                    "fields": {
+                        "raw": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+
+                /* DELETE - Field missing in AO-Cat doc */
+                "postcode": {
+                    "type": "text"
+                },
+
+                /* DELETE - Field missing in AO-Cat doc */
+                "providerId": {
+                    "type": "text"
+                },
+
+                /* AO-Cat 5.8 - Mandatory - (has_publisher) */
+                "publisher": {
+                    "properties": {
+                        "email": {
+                            "type": "text"
+                        },
+                        "name": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "phone": {
+                            "type": "text"
+                        },
+                        "type": {
+                            "type": "text"
+                        }
+                    }
+                },
+
+                /*
+                  AO-Cat 5.15 - Mandatory - (is_about)
+                  Renamed from 'rdfAbout' to 'about'
+                  Achille:
+                  rdfAbout can be replaced with the refers_to (5.14) or the is_about field (5.15) fields, but in AO-Cat these properties typically point to an entity (see section 3.3.4 in AO-Cat documentation). We have to agree on how the linked entities should be represented on the Portal. I think this needs to be discussed by the Portal Group.
+                */
+                "about": {
+                    "type": "text"
+                },
+
+                /*
+                  AO-Cat 5.2 - Mandatory
+                */
+                "resourceType": {
+                    "type": "text"
+                },
+
+                /*
+                  DELETE - Redundant to accessRights above - AO.Cat 5.23 (has_access_rights)
+                  See accessRights above.
+                */
+                "rights": {
+                    "type": "text"
+                },
+
+                /*
+                 AO.Cat 5.12 - Mandatory - (has_responsible)?
+                 No records found on staging with value on this field.
+                 Renamed from 'scientificResponsible' to 'responsible'?
+                 Achille:
+                 scientificResponsible and technicalResponsible have been removed from AO-Cat and can be removed from your mapping as well. We just need a generic 'responsible' field mapped to the has_responsible (5.12) of AO-Cat. Please notice that all AO_Agents (including responsibles) have 4 properties only in AO-Cat: name, identifier, email, homepage. No more 'phone' properties needed
+                */
+                "responsible": {
+                    "properties": {
+                        "email": {
+                            "type": "text"
+                        },
+                        "name": {
+                            "type": "text"
+                        },
+                        // DELETE - AO-Agent doesn't have Phone property
+                        "phone": {
+                            "type": "text"
+                        },
+                        "type": {
+                            "type": "text"
+                        }
+                    }
+                },
+
+                /* AO-Cat 4.7 */
+                "spatial": {
+                    "properties": {
+                        "address": {
+                            "type": "text"
+                        },
+                        "boundingBoxMaxLat": {
+                            "type": "text"
+                        },
+                        "boundingBoxMaxLon": {
+                            "type": "text"
+                        },
+                        "boundingBoxMinLat": {
+                            "type": "text"
+                        },
+                        "boundingBoxMinLon": {
+                            "type": "text"
+                        },
+                        "coordinateSystem": {
+                            "type": "text"
+                        },
+                        "country": {
+                            "type": "text"
+                        },
+                        "location": {
+                            "type": "geo_point"
+                        },
+                        "placeName": {
+                            "type": "text",
+                            "fields": {
+                                "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                }
+                            }
+                        },
+                        // DELETE - Cannot find this field in Spatial-object
+                        "postcode": {
+                            "type": "text",
+                            "fields": {
+                                "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                }
+                            }
+                        }
+                    }
+                },
+
+                /*
+                  NEW - AO-Cat 5.32 (has_spatial_precision)
+                  This property associates a data resource with the approximation with which the spatial region covered by the content of the resource is specified.
+                */
+                "spatialPrecision": {
+                  "type": "text"
+                },
+
+                /*
+                  DELETE - AO.Cat 5.12 (has_responsible)?
+                  See comments above "responsible".
+                  This field is merged with responsible
+                */
+                "technicalResponsible": {
+                    "properties": {
+                        "email": {
+                            "type": "text"
+                        },
+                        "name": {
+                            "type": "text"
+                        },
+                        "phone": {
+                            "type": "text"
+                        },
+                        "type": {
+                            "type": "text"
+                        }
+                    }
+                },
+
+                /* AO-Cat 4.6 */
+                "temporal": {
+                    "type": "nested",
+                    "properties": {
+                        "from": {
+                            "type": "date",
+                            "format": "year || date_optional_time"
+                        },
+                        // Derrived from PeriodO - AO.Cat 5.29
+                        "periodName": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "until": {
+                            "type": "date",
+                            "format": "year || date_optional_time"
+                        },
+                        "uri": {
+                            "type": "text"
+                        }
+                    }
+                },
+
+                /*
+                  NEW - AO-Cat 5.30 - Mandatory - (has_native_period)
+                  This property associates a AO_Temporal_Region with a concept representing a period in some local vocabulary of the provider. Its range is therefore AO_Concept.
+                */
+                "nativePeriod": {
+                    "type": "text"
+                },
+
+                /* AO-Cat 5.3 - Mandatory */
+                "title": {
+                    "type": "text"
+                },
+
+                /* NEW - AO-Cat 5.20 - Mandatory - (was_created_on) */
+                "wasCreated": {
+                    "type": "date",
+                    "format": "year || date_optional_time"
+                }
+
+            }
+        }
+    }
+}
