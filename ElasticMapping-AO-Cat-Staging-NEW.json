@@ -348,28 +348,14 @@
                     "enabled": false
                   },
                   "spatialPrecision": {
+                    "type": "text"
+                  },
+                  "coordinatePrecision": {
                     "type": "text",
                     "index": "false"
                   }
                 }
               },
-
-              "source"
-              Spatial is set to lat,lon by the source of origin. That is, the value has as high precision as it can have.
-
-              "protected"
-              Spatial is protected for some reason. If there is lat,lon, we expect these values to be in the center of a larger area, for example Gothenburg.
-              If we have a Marker with this flag, we can easily identify it and render it in a good way so that it is clear to the user that it is "protected/scrambeled".
-
-              "geonameCity"
-              Spatial is set by querying Geonames.org.
-
-              "geonameMunicipal"
-              Set by querying Geonames.org.
-
-              "geonameCountry"
-              Set by querying Geonames.org.
-
 
               /* AO-Cat 4.6 */
               "temporal": {
@@ -405,17 +391,17 @@
               */
               "nativePeriod": {
                 "properties": {
-                    "prefLabel": {
-                        "type": "text",
-                        "fields": {
-                            "raw": {
-                                "type": "keyword"
-                            }
-                        }
-                    },
-                    "rdfAbout": {
-                        "type": "text"
-                    }
+                  "from": {
+                      "type": "date",
+                      "format": "year || date_optional_time"
+                  },
+                  "periodName": {
+                      "type": "text"
+                  },
+                  "until": {
+                      "type": "date",
+                      "format": "year || date_optional_time"
+                  }
                 }
               },
 
@@ -432,7 +418,7 @@
 
               "digitalImage": {
                 "properties": {
-                  "uri": {
+                  "ariadneUri": {
                     "type": "keyword",
                     "index": "false"
                   },
@@ -440,12 +426,13 @@
                     "type": "boolean",
                     "index": "false"
                   },
-                  "mirrorUri": {
+                  "providerUri": {
                     "type": "keyword",
                     "index": "false"
+                  }
                 }
               }
             }
-      }
+          }
   }
 }
