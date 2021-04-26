@@ -355,17 +355,20 @@
               },
 
               "source"
-              Spatial är satt till lat,lon av ursprungskällan. Det vill säga att värdet har så hög precision som den kan ha.
+              Spatial is set to lat,lon by the source of origin. That is, the value has as high precision as it can have.
+
               "protected"
-              Spatial är skyddat av någon anledning. Om det finns lat,lon så förväntar vi oss att dessa värden sitter exempelvis i centrun på en större area, exemepelvis Göteborg.
-              Om vi får en marker på med denna flagga så kan vi lätta identifera den och rendera den på ett bra sätt så att det tydligt framgår att den är "protected".
+              Spatial is protected for some reason. If there is lat,lon, we expect these values to be in the center of a larger area, for example Gothenburg.
+              If we have a Marker with this flag, we can easily identify it and render it in a good way so that it is clear to the user that it is "protected/scrambeled".
+
               "geonameCity"
-              Spatial är satt av dem och framtagen genom Geonames.org. Vi har inte riktigt förstått hur datat kommer in från källan men om det är exempelvis satt till "Göteborg"
-              så kommer ett uppslag hos geonames.nu att säga att det just är en "stad". Om så är fallet vill vi ha denna flagga sätts till respektive, geonameCity, geonameMunicipal, geonameCountry
+              Spatial is set by querying Geonames.org.
+
               "geonameMunicipal"
-              Se geonameCity
+              Set by querying Geonames.org.
+
               "geonameCountry"
-              Se geonameCity
+              Set by querying Geonames.org.
 
 
               /* AO-Cat 4.6 */
