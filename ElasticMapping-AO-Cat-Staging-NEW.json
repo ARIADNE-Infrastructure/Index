@@ -348,7 +348,8 @@
                     "enabled": false
                   },
                   "spatialPrecision": {
-                    "type": "text"
+                    "type": "text",
+                    "index": "false"
                   }
                 }
               },
