@@ -1,0 +1,338 @@
+{
+  "catalog_test": {
+    "mappings": {
+      "properties": {
+        "derivedSubject": {
+          "properties": {
+            "prefLabel": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "source": {
+              "type": "text",
+            },
+            "id": {
+              "type": "text"
+            },
+            "lang": {
+              "type": "text"
+            }
+          }
+        },
+        "accessPolicy": {
+          "type": "text"
+        },
+        "accessRights": {
+          "type": "text"
+        },
+        "ariadneSubject": {
+          "properties": {
+            "prefLabel": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "contributor": {
+          "properties": {
+            "email": {
+              "type": "text"
+            },
+            "homepage": {
+              "type": "text"
+            },
+            "institution": {
+              "type": "text"
+            },
+            "name": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "agentIdentifier": {
+              "type": "text"
+            }
+          }
+        },
+        "creator": {
+          "properties": {
+            "email": {
+              "type": "text"
+            },
+            "homepage": {
+              "type": "text"
+            },
+            "institution": {
+              "type": "text"
+            },
+            "name": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "agentIdentifier": {
+              "type": "text"
+            }
+          }
+        },
+        "description": {
+          "properties": {
+            "text": {
+              "type": "text"
+            },
+            "language": {
+              "type": "text"
+            }
+          }
+        },
+        "extent": {
+          "type": "text"
+        },
+        "identifier": {
+          "type": "keyword"
+        },
+        "isPartOf": {
+          "type": "text"
+        },
+        "issued": {
+          "type": "date",
+          "format": "year || date_optional_time"
+        },
+        "landingPage": {
+          "type": "text"
+        },
+        "language": {
+          "type": "text"
+        },
+        "modified": {
+          "type": "date",
+          "format": "year || date_optional_time"
+        },
+        "nativeSubject": {
+          "properties": {
+            "prefLabel": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "rdfAbout": {
+              "type": "text"
+            }
+          }
+        },
+        "originalId": {
+          "type": "text"
+        },
+        "owner": {
+          "properties": {
+            "email": {
+              "type": "text"
+            },
+            "homepage": {
+              "type": "text"
+            },
+            "institution": {
+              "type": "text"
+            },
+            "name": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "agentIdentifier": {
+              "type": "text"
+            }
+          }
+        },
+        "publisher": {
+          "properties": {
+            "email": {
+              "type": "text"
+            },
+            "homepage": {
+              "type": "text"
+            },
+            "institution": {
+              "type": "text"
+            },
+            "name": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "agentIdentifier": {
+              "type": "text"
+            }
+          }
+        },
+        "is_about": {
+          "properties": {
+            "label": {
+              "type": "text"
+            },
+            "uri": {
+              "type": "text"
+            }
+          }
+        },
+        "resourceType": {
+          "type": "text"
+        },
+        "has_type": {
+          "properties": {
+            "label": {
+              "type": "text"
+            },
+            "uri": {
+              "type": "text"
+            }
+          }
+        },
+        "responsible": {
+          "properties": {
+            "email": {
+              "type": "text"
+            },
+            "homepage": {
+              "type": "text"
+            },
+            "institution": {
+              "type": "text"
+            },
+            "name": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "agentIdentifier": {
+              "type": "text"
+            }
+          }
+        },
+        "spatial": {
+          "type": "nested",
+          "properties": {
+            "placeName": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "address": {
+              "type": "text"
+            },
+            "geopoint": {
+              "type": "geo_point",
+              "enabled": false
+            },
+            "boundingbox": {
+              "type": "geo_shape",
+              "enabled": false
+            },
+            "polygon": {
+              "type": "geo_shape",
+              "enabled": false
+            },
+            "spatialPrecision": {
+              "type": "text"
+            },
+            "coordinatePrecision": {
+              "type": "text",
+              "index": "false"
+            }
+          }
+        },
+        "temporal": {
+          "type": "nested",
+          "properties": {
+            "from": {
+              "type": "date",
+              "format": "year || date_optional_time"
+            },
+            "periodName": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "until": {
+              "type": "date",
+              "format": "year || date_optional_time"
+            },
+            "uri": {
+              "type": "text"
+            }
+          }
+        },
+        "nativePeriod": {
+          "properties": {
+            "from": {
+              "type": "date",
+              "format": "year || date_optional_time"
+            },
+            "periodName": {
+              "type": "text"
+            },
+            "until": {
+              "type": "date",
+              "format": "year || date_optional_time"
+            }
+          }
+        },
+        "title": {
+          "type": "text"
+        },
+        "wasCreated": {
+          "type": "date",
+          "format": "year || date_optional_time"
+        },
+        "digitalImage": {
+          "properties": {
+            "ariadneUri": {
+              "type": "keyword",
+              "index": "false"
+            },
+            "primary": {
+              "type": "boolean",
+              "index": "false"
+            },
+            "providerUri": {
+              "type": "keyword",
+              "index": "false"
+            }
+          }
+        }
+      }
+    }
+  }
+}
