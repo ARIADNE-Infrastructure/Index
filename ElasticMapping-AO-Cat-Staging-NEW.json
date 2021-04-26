@@ -320,53 +320,51 @@
               },
 
               /* AO-Cat 4.7 */
-              "spatial": {
-                  "properties": {
-                      "address": {
-                          "type": "text"
-                      },
-                      "boundingBoxMaxLat": {
-                          "type": "text"
-                      },
-                      "boundingBoxMaxLon": {
-                          "type": "text"
-                      },
-                      "boundingBoxMinLat": {
-                          "type": "text"
-                      },
-                      "boundingBoxMinLon": {
-                          "type": "text"
-                      },
-                      "coordinateSystem": {
-                          "type": "text"
-                      },
-                      "country": {
-                          "type": "text"
-                      },
-                      "location": {
-                          "type": "geo_point"
-                      },
-                      "placeName": {
-                          "type": "text",
-                          "fields": {
-                              "keyword": {
-                                  "type": "keyword",
-                                  "ignore_above": 256
-                              }
-                          }
-                      }
+
+              "spatial":{     
+                "type": "nested",
+                "properties": {         
+                  "placeName": {
+                      "type": "text",
+                      "fields": {
+                        "raw": {
+                            "type": "keyword"
+                        }
+                    }
+                  },
+                  "address": {
+                    "type": "text"
+                  },
+                  "geopoint": {
+                    "type": "geo_point",
+                    "enabled": false
+                  },
+                  "boundingbox": {
+                    "type": "geo_shape",
+                    "enabled": false
+                  },
+                  "polygon": {
+                    "type": "geo_shape",
+                    "enabled": false
+                  },
+                  "spatialPrecision": {
+                    "type": "text"
                   }
+                }
               },
 
-              /*
-                NEW - AO-Cat 5.34 (has_spatial_precision)
-                This property associates a data resource with the approximation with which the
-                spatial region covered by the content of the resource is specified.
-              */
-              "spatialPrecision": {
-                "type": "text"
-              },
-
+              "source"
+              Spatial är satt till lat,lon av ursprungskällan. Det vill säga att värdet har så hög precision som den kan ha.
+              "protected"
+              Spatial är skyddat av någon anledning. Om det finns lat,lon så förväntar vi oss att dessa värden sitter exempelvis i centrun på en större area, exemepelvis Göteborg.
+              Om vi får en marker på med denna flagga så kan vi lätta identifera den och rendera den på ett bra sätt så att det tydligt framgår att den är "protected".
+              "geonameCity"
+              Spatial är satt av dem och framtagen genom Geonames.org. Vi har inte riktigt förstått hur datat kommer in från källan men om det är exempelvis satt till "Göteborg"
+              så kommer ett uppslag hos geonames.nu att säga att det just är en "stad". Om så är fallet vill vi ha denna flagga sätts till respektive, geonameCity, geonameMunicipal, geonameCountry
+              "geonameMunicipal"
+              Se geonameCity
+              "geonameCountry"
+              Se geonameCity
 
 
               /* AO-Cat 4.6 */
@@ -426,9 +424,24 @@
               "wasCreated": {
                   "type": "date",
                   "format": "year || date_optional_time"
-              }
+              },
 
-          }
+              "digitalImage": {
+                "properties": {
+                  "uri": {
+                    "type": "keyword",
+                    "index": "false"
+                  },
+                  "primary": {
+                    "type": "boolean",
+                    "index": "false"
+                  },
+                  "mirrorUri": {
+                    "type": "keyword",
+                    "index": "false"
+                }
+              }
+            }
       }
   }
 }
