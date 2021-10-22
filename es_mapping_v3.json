@@ -308,8 +308,7 @@
                      "type": "text",
                      "fields": {
                         "raw": {
-                           "type": "keyword",
-                           "normalizer": "useLowercase"
+                           "type": "keyword"
                         }
                      }
                   },
