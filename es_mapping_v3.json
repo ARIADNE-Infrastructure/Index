@@ -294,7 +294,10 @@
                   },
                   "spatialPrecision": {
                      "type": "text"
-                  }
+                  },
+                  "centroid": {
+                     "type": "geo_point"
+                  },
                }
             },
             "temporal": {
