@@ -1,349 +1,227 @@
 {
-"ariadneplus_test": {
-"mappings": {
-"dynamic": "false",
-"properties": {
-"accessPolicy": {
-"type": "text"
-},
-"accessRights": {
-"type": "text"
-},
-"ariadneSubject": {
-"properties": {
-"prefLabel": {
-"type": "text",
-"fields": {
-"raw": {
-"type": "keyword"
-}
-}
-}
-}
-},
-"contributor": {
-"properties": {
-"agentIdentifier": {
-"type": "text"
-},
-"email": {
-"type": "text"
-},
-"homepage": {
-"type": "text"
-},
-"institution": {
-"type": "text"
-},
-"name": {
-"type": "text",
-"fields": {
-"raw": {
-"type": "keyword"
-}
-}
-}
-}
-},
-"creator": {
-"properties": {
-"agentIdentifier": {
-"type": "text"
-},
-"email": {
-"type": "text"
-},
-"homepage": {
-"type": "text"
-},
-"institution": {
-"type": "text"
-},
-"name": {
-"type": "text",
-"fields": {
-"raw": {
-"type": "keyword"
-}
-}
-}
-}
-},
-"derivedSubject": {
-"properties": {
-"id": {
-"type": "text"
-},
-"lang": {
-"type": "text"
-},
-"prefLabel": {
-"type": "text",
-"fields": {
-"raw": {
-"type": "keyword",
-"normalizer": "useLowercase"
-}
-}
-},
-"source": {
-"type": "text"
-}
-}
-},
-"description": {
-"properties": {
-"language": {
-"type": "text"
-},
-"text": {
-"type": "text"
-}
-}
-},
-"digitalImage": {
-"properties": {
-"ariadneUri": {
-"type": "keyword"
-},
-"primary": {
-"type": "boolean"
-},
-"providerUri": {
-"type": "keyword"
-}
-}
-},
-"extent": {
-"type": "text"
-},
-"has_type": {
-"properties": {
-"label": {
-"type": "text"
-},
-"uri": {
-"type": "text"
-}
-}
-},
-"identifier": {
-"type": "keyword"
-},
-"isPartOf": {
-"type": "text"
-},
-"is_about": {
-"properties": {
-"label": {
-"type": "text"
-},
-"uri": {
-"type": "text"
-}
-}
-},
-"issued": {
-"type": "date",
-"format": "year || date_optional_time"
-},
-"landingPage": {
-"type": "text"
-},
-"language": {
-"type": "text"
-},
-"modified": {
-"type": "date",
-"format": "year || date_optional_time"
-},
-"nativePeriod": {
-"properties": {
-"from": {
-"type": "date",
-"format": "year || date_optional_time"
-},
-"periodName": {
-"type": "text"
-},
-"until": {
-"type": "date",
-"format": "year || date_optional_time"
-}
-}
-},
-"nativeSubject": {
-"properties": {
-"prefLabel": {
-"type": "text",
-"fields": {
-"raw": {
-"type": "keyword",
-"normalizer": "useLowercase"
-}
-}
-},
-"rdfAbout": {
-"type": "text"
-}
-}
-},
-"originalId": {
-"type": "text"
-},
-"owner": {
-"properties": {
-"agentIdentifier": {
-"type": "text"
-},
-"email": {
-"type": "text"
-},
-"homepage": {
-"type": "text"
-},
-"institution": {
-"type": "text"
-},
-"name": {
-"type": "text",
-"fields": {
-"raw": {
-"type": "keyword"
-}
-}
-}
-}
-},
-"publisher": {
-"properties": {
-"agentIdentifier": {
-"type": "text"
-},
-"email": {
-"type": "text"
-},
-"homepage": {
-"type": "text"
-},
-"institution": {
-"type": "text"
-},
-"name": {
-"type": "text",
-"fields": {
-"raw": {
-"type": "keyword"
-}
-}
-}
-}
-},
-"resourceType": {
-"type": "text"
-},
-"responsible": {
-"properties": {
-"agentIdentifier": {
-"type": "text"
-},
-"email": {
-"type": "text"
-},
-"homepage": {
-"type": "text"
-},
-"institution": {
-"type": "text"
-},
-"name": {
-"type": "text",
-"fields": {
-"raw": {
-"type": "keyword"
-}
-}
-}
-}
-},
-"spatial": {
-"type": "nested",
-"properties": {
-"address": {
-"type": "text"
-},
-"boundingbox": {
-"type": "geo_shape"
-},
-"centroid": {
-"type": "geo_point"
-},
-"coordinatePrecision": {
-"type": "text"
-},
-"geopoint": {
-"type": "geo_point"
-},
-"placeName": {
-"type": "text",
-"fields": {
-"raw": {
-"type": "keyword"
-}
-}
-},
-"polygon": {
-"type": "geo_shape"
-},
-"spatialPrecision": {
-"type": "text"
-}
-}
-},
-"temporal": {
-"type": "nested",
-"properties": {
-"from": {
-"type": "date",
-"format": "year || date_optional_time"
-},
-"periodName": {
-"type": "text",
-"fields": {
-"raw": {
-"type": "keyword"
-}
-}
-},
-"until": {
-"type": "date",
-"format": "year || date_optional_time"
-},
-"uri": {
-"type": "text",
-"fields": {
-"raw": {
-"type": "keyword"
-}
-}
-}
-}
-},
-"title": {
-"properties": {
-"language": {
-"type": "text"
-},
-"text": {
-"type": "text"
-}
-}
-},
-"wasCreated": {
-"type": "date",
-"format": "year || date_optional_time"
-}
-}
-}
-}
+    "ariadneplus_test": {
+        "mappings": {
+            "dynamic": "false",
+            "properties": {
+                "accessPolicy": {"type": "text"},
+                "accessRights": {"type": "text"},
+                "ariadneSubject": {
+                    "properties": {
+                        "prefLabel": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {"type": "keyword"}
+                            }
+                        }
+                    }
+                },
+                "contributor": {
+                    "properties": {
+                        "agentIdentifier": {"type": "text"},
+                        "email": {"type": "text"},
+                        "homepage": {"type": "text"},
+                        "institution": {"type": "text"},
+                        "name": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {"type": "keyword"}
+                            }
+                        }
+                    }
+                },
+                "creator": {
+                    "properties": {
+                        "agentIdentifier": {"type": "text"},
+                        "email": {"type": "text"},
+                        "homepage": {"type": "text"},
+                        "institution": {"type": "text"},
+                        "name": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {"type": "keyword"}
+                            }
+                        }
+                    }
+                },
+                "derivedSubject": {
+                    "properties": {
+                        "id": {"type": "text"},
+                        "lang": {"type": "text"},
+                        "prefLabel": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {
+                                    "type": "keyword",
+                                    "normalizer": "useLowercase"
+                                }
+                            }
+                        },
+                        "source": {"type": "text"}
+                    }
+                },
+                "description": {
+                    "properties": {
+                        "language": {"type": "text"},
+                        "text": {"type": "text"}
+                    }
+                },
+                "digitalImage": {
+                    "properties": {
+                        "ariadneUri": {"type": "keyword"},
+                        "primary": {"type": "boolean"},
+                        "providerUri": {"type": "keyword"}
+                    }
+                },
+                "extent": {"type": "text"},
+                "has_type": {
+                    "properties": {
+                        "label": {"type": "text"},
+                        "uri": {"type": "text"}
+                    }
+                },
+                "identifier": {"type": "keyword"},
+                "isPartOf": {"type": "text"},
+                "is_about": {
+                    "properties": {
+                        "label": {"type": "text"},
+                        "uri": {"type": "text"}
+                    }
+                },
+                "issued": {
+                    "type": "date",
+                    "format": "year || date_optional_time"
+                },
+                "landingPage": {"type": "text"},
+                "language": {"type": "text"},
+                "modified": {
+                    "type": "date",
+                    "format": "year || date_optional_time"
+                },
+                "nativePeriod": {
+                    "properties": {
+                        "from": {
+                            "type": "date",
+                            "format": "year || date_optional_time"
+                        },
+                        "periodName": {"type": "text"},
+                        "until": {
+                            "type": "date",
+                            "format": "year || date_optional_time"
+                        }
+                    }
+                },
+                "nativeSubject": {
+                    "properties": {
+                        "prefLabel": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {
+                                    "type": "keyword",
+                                    "normalizer": "useLowercase"
+                                }
+                            }
+                        },
+                        "rdfAbout": {"type": "text"}
+                    }
+                },
+                "originalId": {"type": "text"},
+                "owner": {
+                    "properties": {
+                        "agentIdentifier": {"type": "text"},
+                        "email": {"type": "text"},
+                        "homepage": {"type": "text"},
+                        "institution": {"type": "text"},
+                        "name": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {"type": "keyword"}
+                            }
+                        }
+                    }
+                },
+                "publisher": {
+                    "properties": {
+                        "agentIdentifier": {"type": "text"},
+                        "email": {"type": "text"},
+                        "homepage": {"type": "text"},
+                        "institution": {"type": "text"},
+                        "name": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {"type": "keyword"}
+                            }
+                        }
+                    }
+                },
+                "resourceType": {"type": "text"},
+                "responsible": {
+                    "properties": {
+                        "agentIdentifier": {"type": "text"},
+                        "email": {"type": "text"},
+                        "homepage": {"type": "text"},
+                        "institution": {"type": "text"},
+                        "name": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {"type": "keyword"}
+                            }
+                        }
+                    }
+                },
+                "spatial": {
+                    "type": "nested",
+                    "properties": {
+                        "address": {"type": "text"},
+                        "boundingbox": {"type": "geo_shape"},
+                        "centroid": {"type": "geo_point"},
+                        "coordinatePrecision": {"type": "text"},
+                        "geopoint": {"type": "geo_point"},
+                        "placeName": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {"type": "keyword"}
+                            }
+                        },
+                        "polygon": {"type": "geo_shape"},
+                        "spatialPrecision": {"type": "text"}
+                    }
+                },
+                "temporal": {
+                    "type": "nested",
+                    "properties": {
+                        "from": {
+                            "type": "date",
+                            "format": "year || date_optional_time"
+                        },
+                        "periodName": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {"type": "keyword"}
+                            }
+                        },
+                        "until": {
+                            "type": "date",
+                            "format": "year || date_optional_time"
+                        },
+                        "uri": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {"type": "keyword"}
+                            }
+                        }
+                    }
+                },
+                "title": {
+                    "properties": {
+                        "language": {"type": "text"},
+                        "text": {"type": "text"}
+                    }
+                },
+                "wasCreated": {
+                    "type": "date",
+                    "format": "year || date_optional_time"
+                }
+            }
+        }
+    }
 }
