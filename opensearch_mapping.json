@@ -117,7 +117,7 @@
             "extent":{
                "type":"text"
             },
-            "has_identifier":{
+            "otherId":{
                "type":"text",
                "fields":{
                   "raw":{
