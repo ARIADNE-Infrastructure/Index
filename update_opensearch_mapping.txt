@@ -1,0 +1,29 @@
+PUT <index/_mapping>
+{
+  "properties": {
+      "title":{
+         "properties":{
+            "language":{
+               "type":"text"
+            },
+            "text":{
+               "type":"text",
+               "fields":{
+                  "raw":{
+                     "type":"keyword"
+                  }
+               }
+            }
+         }
+      },
+    "resourceType":{
+       "type":"text",
+       "fields":{
+          "raw":{
+             "type":"keyword"
+          }
+       }
+    }
+  }
+}
+
