@@ -249,7 +249,12 @@
                }
             },
             "resourceType":{
-               "type":"text"
+               "type":"text",
+               "fields":{
+                  "raw":{
+                     "type":"keyword"
+                  }
+               }
             },
             "responsible":{
                "properties":{
@@ -344,7 +349,12 @@
                      "type":"text"
                   },
                   "text":{
-                     "type":"text"
+                     "type":"text",
+                     "fields":{
+                        "raw":{
+                           "type":"keyword"
+                        }
+                     }
                   }
                }
             },
