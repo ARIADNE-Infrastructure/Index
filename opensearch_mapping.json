@@ -84,6 +84,21 @@
                         }
                     }
                 },
+                "dataType": {
+                    "properties": {
+                        "label": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "uri": {
+                            "type": "text"
+                        }
+                    }
+                },
                 "derivedSubject": {
                     "properties": {
                         "id": {
